@@ -157,7 +157,8 @@ def model_with_centroid(selected_type = "Trimmed"):
         
     return fig
 
-
+figr = model_with_centroid(selected_type)
+st.plotly_chart(figr)
 
     
 
