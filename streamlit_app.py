@@ -114,7 +114,8 @@ def for_df(selected_type = "Trimmed"):
 def k_cluster(selected_type="Trimmed", k = 2):
     if selected_type == "Trimmed":
         df = for_df(selected_type = selected_type)
-        
+        model = KMeans(n_clusters=c, random_state=42)
+        model.fit(X1)
         
         
 
