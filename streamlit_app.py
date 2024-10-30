@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
 
 st.title("Clustering of Retail shop customers.")
 selected_type = st.radio("Choose data type:", ('Trimmed', 'Non-Trimmed'))
