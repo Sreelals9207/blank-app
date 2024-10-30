@@ -57,15 +57,21 @@ def scatter_plot_df(selected_type = "Trimmed"):
         },
         title="Distribution of Total Price and Total Quantity Purchased"
     )
-    df1 = df1
-    return fig, df1
+    
+    buffer = io.StringIO()
+    df1.info(buf=buffer)
+    info_str = buffer.getvalue()  
 
-figr, info = scatter_plot_df(selected_type)
-st.plotly_chart(figr)
+    return fig, info_str 
 
-buffer = io.StringIO()  # Create a buffer to capture the info output
-info.info(buf=buffer)  # Call info() with the buffer
-info_str = buffer.getvalue()
+
+fig, info_str = scatter_plot_df(selected_type)
+
+
+st.plotly_chart(fig)
+
+
+st.write("DataFrame Information:")
 st.text(info_str)
 
 
