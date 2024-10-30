@@ -32,17 +32,6 @@ def scatter_plot_df(selected_type = "Trimmed"):
     if selected_type == 'Trimmed':
         df.set_index("CustomerID", inplace=True)
         df = df[["totalprize", "totalquandity"]]
-
-        fig = px.scatter(
-            df,
-            x="totalprize",
-            y="totalquandity",
-            labels={
-                "totalprize": "Total Prize Given by Customer",
-                "totalquandity": "Total Quantity Purchased by Customers"
-            },
-            title="Distribution of Total Price and Total Quantity Purchased"
-        )
     else:
         df.set_index("CustomerID", inplace=True)
                 #trimmed 10% bottom and top of 'df'.
@@ -57,7 +46,7 @@ def scatter_plot_df(selected_type = "Trimmed"):
             (df["totalquandity"] >= lower_bound_col2) & (df["totalquandity"] <= upper_bound_col2)
         ]
 
-        fig = px.scatter(
+     fig = px.scatter(
             df,
             x="totalprize",
             y="totalquandity",
@@ -67,10 +56,10 @@ def scatter_plot_df(selected_type = "Trimmed"):
             },
             title="Distribution of Total Price and Total Quantity Purchased"
         )
-        return fig
+        return figr
 
-scatter_plot_df()
-
+fig = scatter_plot_df(selected_type)
+st.plotly_chart(fig)
 
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
