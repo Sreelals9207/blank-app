@@ -111,17 +111,18 @@ def for_df(selected_type = "Trimmed"):
 
 
 
-#def k_cluster(selected_type="Trimmed", k = 2):
-    #if selected_type == "Trimmed":
+def k_cluster(selected_type="Trimmed", k = 2):
+    if selected_type == "Trimmed":
+        df = for_df(selected_type = selected_type)
+        
+        
         
 
 
 st.title("K slider to change number of clusters for model1")
 slider_value1 = st.slider("K Slider1:", min_value=2, max_value=15, value=2)
 
-st.title("K slider to change number of clusters for model2")
-slider_value2 = st.slider("K Slider2:", min_value=2, max_value=15, value=2)
-#def ss_score_and_inersia():
+
     
 
 
