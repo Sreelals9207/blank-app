@@ -46,7 +46,16 @@ def scatter_plot_df(selected_type = "Trimmed"):
             (df["totalquandity"] >= lower_bound_col2) & (df["totalquandity"] <= upper_bound_col2)
         ]
 
-      fig = px.scatter(df,x="totalprize",y="totalquandity",labels={"totalprize": "Total Prize Given by Customer","totalquandity": "Total Quantity Purchased by Customers"},title="Distribution of Total Price and Total Quantity Purchased")
+    fig = px.scatter(
+        df,
+        x="totalprize",
+        y="totalquandity",
+        labels={
+            "totalprize": "Total Prize Given by Customer",
+            "totalquandity": "Total Quantity Purchased by Customers"
+        },
+        title="Distribution of Total Price and Total Quantity Purchased"
+    )
         return fig
 
 fig = scatter_plot_df(selected_type)
