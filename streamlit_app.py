@@ -68,10 +68,11 @@ st.title(
     f"shape of the dataframe is{shape}."
 )
 
+slider_value = st.slider("K Slider:", min_value=2, max_value=15, value=2)
 
 
-
-
+def ss_score_and_inersia():
+    
 
 
 
