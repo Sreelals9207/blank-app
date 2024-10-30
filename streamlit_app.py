@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import plotly.express as px
 import joblib
-
+from sklearn.cluster import KMeans
 
 
 st.title("Clustering of Retail shop customers.")
