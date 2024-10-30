@@ -67,6 +67,7 @@ def scatter_plot_df(selected_type = "Trimmed"):
             },
             title="Distribution of Total Price and Total Quantity Purchased"
         )
+        return fig
 
 scatter_plot_df()
 
