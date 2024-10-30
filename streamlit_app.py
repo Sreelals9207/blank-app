@@ -8,8 +8,8 @@ import plotly.express as px
 st.title("Clustering of Retail shop customers.")
 selected_type = st.radio("Choose data type:", ('Trimmed', 'Non-Trimmed'))
 
-def scatter_plot_df(filepath="/Users/user/Downloads/OnlineRetail.csv.zip", trimmed = True):
-    data = pd.read_csv(filepath, encoding='ISO-8859-1')
+def scatter_plot_df(selected_type = "Trimmed"):
+    data = pd.read_csv("/Users/user/Downloads/OnlineRetail.csv.zip", encoding='ISO-8859-1')
 
     #making the data into a dataframe
     df = pd.DataFrame(data)
