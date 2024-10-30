@@ -29,7 +29,7 @@ def scatter_plot_df(selected_type = "Trimmed"):
     #rename the column 'Quandity'
     df.rename(columns={"Quantity" : "totalquandity"}, inplace=True)
     
-    if selected_type == 'Trimmed':
+    if selected_type == 'Non-Trimmed':
         df.set_index("CustomerID", inplace=True)
         df = df[["totalprize", "totalquandity"]]
     else:
