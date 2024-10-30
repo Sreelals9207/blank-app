@@ -55,7 +55,7 @@ def scatter_plot_df(selected_type = "Trimmed"):
                 "totalquandity": "Total Quantity Purchased by Customers"
             },
             title="Distribution of Total Price and Total Quantity Purchased"
-        )
+     )
         return figr
 
 fig = scatter_plot_df(selected_type)
