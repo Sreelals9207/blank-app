@@ -56,11 +56,11 @@ def scatter_plot_df(selected_type = "Trimmed"):
         },
         title="Distribution of Total Price and Total Quantity Purchased"
     )
-    return fig
+    return fig, df.info()
 
-fig = scatter_plot_df(selected_type)
-st.plotly_chart(fig)
-
+figr = scatter_plot_df(selected_type)
+st.plotly_chart(figr)
+st.write(figr)
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
