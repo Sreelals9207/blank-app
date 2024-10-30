@@ -58,9 +58,22 @@ def scatter_plot_df(selected_type = "Trimmed"):
     )
     return fig, df.info()
 
-figr = scatter_plot_df(selected_type)
+figr, info = scatter_plot_df(selected_type)
 st.plotly_chart(figr)
-st.write(figr)
+st.text(info)
+
+
+
+
+
+
+
+
+
+
+
+
+
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
