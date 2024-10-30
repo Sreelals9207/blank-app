@@ -60,8 +60,8 @@ def scatter_plot_df(selected_type = "Trimmed"):
     )
       
     shape = df1.shape
-    df = df1
-    return fig ,shape, df
+    
+    return fig ,shape
 
 
 fig , shape = scatter_plot_df(selected_type)
