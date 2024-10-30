@@ -60,7 +60,8 @@ def scatter_plot_df(selected_type = "Trimmed"):
     )
       
     shape = df1.shape
-    return fig ,shape
+    df = df1
+    return fig ,shape, df
 
 
 fig , shape = scatter_plot_df(selected_type)
@@ -69,7 +70,9 @@ st.header(
     f"shape of the dataframe is{shape}."
 )
 
-def 
+#def k_cluster(selected_type="Trimmed", k = 2):
+    #if selected_type == "Trimmed":
+        
 
 
 st.title("K slider to change number of clusters for model1")
