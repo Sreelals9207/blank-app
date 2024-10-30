@@ -68,6 +68,8 @@ st.header(
     f"shape of the dataframe is{shape}."
 )
 
+def 
+
 
 st.title("K slider to change number of clusters for model1")
 slider_value1 = st.slider("K Slider1:", min_value=2, max_value=15, value=2)
