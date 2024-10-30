@@ -64,7 +64,7 @@ figr, info = scatter_plot_df(selected_type)
 st.plotly_chart(figr)
 
 buffer = io.StringIO()  # Create a buffer to capture the info output
-df1.info(buf=buffer)  # Call info() with the buffer
+info.info(buf=buffer)  # Call info() with the buffer
 info_str = buffer.getvalue()
 st.text(info_str)
 
