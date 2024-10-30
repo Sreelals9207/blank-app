@@ -31,7 +31,7 @@ def scatter_plot_df(selected_type = "Trimmed"):
     
     if selected_type == 'Non-Trimmed':
         df.set_index("CustomerID", inplace=True)
-        df = df[["totalprize", "totalquandity"]]
+        df1 = df[["totalprize", "totalquandity"]]
     else:
         df.set_index("CustomerID", inplace=True)
                 #trimmed 10% bottom and top of 'df'.
@@ -41,13 +41,13 @@ def scatter_plot_df(selected_type = "Trimmed"):
         lower_bound_col2 = df["totalquandity"].quantile(0.02)
         upper_bound_col2 = df["totalquandity"].quantile(0.98)
         
-        df = df[
+        df1 = df[
             (df["totalprize"] >= lower_bound_col1) & (df["totalprize"] <= upper_bound_col1) &
             (df["totalquandity"] >= lower_bound_col2) & (df["totalquandity"] <= upper_bound_col2)
         ]
 
     fig = px.scatter(
-        df,
+        df1,
         x="totalprize",
         y="totalquandity",
         labels={
@@ -56,7 +56,7 @@ def scatter_plot_df(selected_type = "Trimmed"):
         },
         title="Distribution of Total Price and Total Quantity Purchased"
     )
-    return fig, df.info()
+    return fig, df1.info()
 
 figr, info = scatter_plot_df(selected_type)
 st.plotly_chart(figr)
