@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import plotly.express as px
+import io
 
 
 st.title("Clustering of Retail shop customers.")
