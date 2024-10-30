@@ -65,8 +65,7 @@ def scatter_plot_df(selected_type = "Trimmed"):
 fig , shape = scatter_plot_df(selected_type)
 st.plotly_chart(fig)
 st.title(
-    f"shape of the dataframe is
-    rows= {shape[0]}"
+    f"shape of the dataframe is{shape}."
 )
 
 
