@@ -72,7 +72,7 @@ st.title(
 st.title("K slider to change number of clusters for model1")
 slider_value = st.slider("K Slider:", min_value=2, max_value=15, value=2)
 
-st.title("K slider to change number of clusters for model2")
+st.title("#K slider to change number of clusters for model2")
 slider_value = st.slider("K Slider:", min_value=2, max_value=15, value=2)
 #def ss_score_and_inersia():
     
