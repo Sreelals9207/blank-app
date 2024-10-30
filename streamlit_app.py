@@ -69,7 +69,7 @@ st.title(
 )
 
 
-st.title("K slider to change silhouette_score and inertia")
+st.title("K slider to change number of clusters")
 slider_value = st.slider("K Slider:", min_value=2, max_value=15, value=2)
 
 
