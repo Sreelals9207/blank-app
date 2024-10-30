@@ -3,5 +3,5 @@ pandas
 plotly
 matplotlib
 numpy
-joblin
+joblib
 
