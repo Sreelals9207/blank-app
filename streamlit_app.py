@@ -116,8 +116,9 @@ def k_cluster(selected_type="Trimmed", k = 2):
         df = for_df(selected_type = selected_type)
         model = KMeans(n_clusters=k, random_state=42)
         model.fit(df)
-        ss = model.
-        
+        ss = (silhouette_score(df, model.labels_)
+        inertia = model.inertia_
+    return ss, inertia
         
 
 
