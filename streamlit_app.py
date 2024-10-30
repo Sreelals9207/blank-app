@@ -64,7 +64,7 @@ def scatter_plot_df(filepath="/Users/user/Downloads/OnlineRetail.csv.zip", trimm
             title="Distribution of Total Price and Total Quantity Purchased"
         )
 
-
+scatter_plot_df()
 
 
 st.write(
