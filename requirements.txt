@@ -4,6 +4,5 @@ plotly
 matplotlib
 numpy
 joblib
-KMean
-silhouette_score
+
 
