@@ -9,7 +9,7 @@ st.title("Clustering of Retail shop customers.")
 selected_type = st.radio("Choose data type:", ('Trimmed', 'Non-Trimmed'))
 
 def scatter_plot_df(selected_type = "Trimmed"):
-    data = pd.read_csv("github.com/Sreelals9207/blank-app/blob/main/OnlineRetail.csv.zip", encoding='ISO-8859-1')
+    data = pd.read_csv("", encoding='ISO-8859-1')
 
     #making the data into a dataframe
     df = pd.DataFrame(data)
