@@ -116,7 +116,7 @@ def k_models(selected_type = "Trimmed", slider=2):
     model = KMeans(n_clusters=slider, random_state=42)
     model.fit(df)
     inertia = model.inertia_
-    ss = silhouette_score(X1, model.labels_)
+    ss = silhouette_score(df, model.labels_)
     return inertia, ss
 
 inertia, ss = k_models(selected_type, slider)
