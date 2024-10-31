@@ -125,6 +125,49 @@ st.subheader(f"silhouette_score for the model : {ss}.")
 
 
 
+def scatter_with_cluster(selected_type = "Trimmed", slider=2)
+    df = for_df(selected_type = selected_type)
+    model = KMeans(n_clusters=slider, random_state=42)
+    model.fit(df)
+    labels = model.labels_
+    centroids = model.cluster_centers_
+    figure = sns.scatterplot(
+        x=df["totalprize"],
+        y=df["totalquandity"],
+        hue=labels,
+        palette="deep"
+    )
+    plt.xlabel("totalprize given by customer")
+    plt.ylabel("totalquandity purchased by customers")
+    plt.title("distribution of total price and total quandity purchased");
+    
+    #Also including the centrids in this plot.
+    plt.scatter(
+        x=centroids[:, 0],
+        y=centroids[:, 1],
+        marker="*",
+        s=340
+    )
+    return figure
+
+figure = scatter_with_cluster(selected_type, slider)
+st.plotly_chart(figure)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
