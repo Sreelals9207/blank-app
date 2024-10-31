@@ -4,5 +4,4 @@ plotly
 matplotlib
 numpy
 joblib
-sklearn
-KMean
+scikit-learn
