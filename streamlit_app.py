@@ -124,10 +124,7 @@ st.subheader(f"inertia for the model: {inertia}.")
 st.subheader(f"silhouette_score for the model: {ss}.") 
 
 
-slider1 = st.slider("number of clusters for non-trimmed data", 2, 15, 2)
-inertia1, ss1 = k_models(selected_type, slider1)
-st.subheader(f"inertia for the model: {inertia1}.")
-st.subheader(f"silhouette_score for the model: {ss1}.")
+
 
 
 
