@@ -151,7 +151,7 @@ def scatter_with_cluster(selected_type = "Trimmed", slider=2):
         marker="*",
         s=340
     )
-    plt.figure()
+    figure = plt.figure()
     return figure
 
 figure = scatter_with_cluster(selected_type, slider)
