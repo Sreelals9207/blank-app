@@ -126,15 +126,15 @@ st.subheader(f"silhouette_score for the model : {ss}.")
 
 
 
-def scatter_with_cluster(
-            selected_type = "Trimmed", slider=2):
+def scatter_with_cluster(selected_type = "Trimmed", slider=2):
     df = for_df(selected_type = selected_type)
     model = KMeans(n_clusters=slider, random_state=42)
     model.fit(df)
     labels = model.labels_
     centroids = model.cluster_centers_
     figure, ax = plt.figure(figsize=(10, 6)) 
-    sns.scatterplot(ax=ax,
+    sns.scatterplot(
+        ax=ax,
         x=df["totalprize"],
         y=df["totalquandity"],
         hue=labels,
@@ -150,7 +150,8 @@ def scatter_with_cluster(
         y=centroids[:, 1],
         marker="*",
         s=340
-)
+    )
+    plt.figure()
     return figure
 
 figure = scatter_with_cluster(selected_type, slider)
