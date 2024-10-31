@@ -81,10 +81,17 @@ After the **Trimmed** and **Non-Trimmed** buttons, you will see a scatter plot t
 """)
 
 
+st.markdown("""
+### Dataframe Shape Preview
+You can view the shape of the DataFrame as you toggle between the **Trimmed** and **Non-Trimmed** buttons.
+""")
+
 
 st.header(
     f"shape of the dataframe is{shape}."
 )
+
+
 
 st.markdown("""
 ### Adjustable Number of Clusters
