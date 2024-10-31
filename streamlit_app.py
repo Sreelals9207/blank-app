@@ -126,13 +126,15 @@ st.subheader(f"silhouette_score for the model : {ss}.")
 
 
 
-def scatter_with_cluster(selected_type = "Trimmed", slider=2):
-    df = for_df(selected_type = selected_type)
+def scatter_with_cluster(selected_type="Trimmed", slider=2):
+    df = for_df(selected_type=selected_type)  # Assuming for_df is defined elsewhere
     model = KMeans(n_clusters=slider, random_state=42)
     model.fit(df)
     labels = model.labels_
     centroids = model.cluster_centers_
-    figure, ax = plt.figure(figsize=(10, 6)) 
+
+    # Create the scatter plot
+    fig, ax = plt.subplots(figsize=(10, 6))  # Create a figure and axis
     sns.scatterplot(
         ax=ax,
         x=df["totalprize"],
@@ -140,19 +142,22 @@ def scatter_with_cluster(selected_type = "Trimmed", slider=2):
         hue=labels,
         palette="deep"
     )
-    plt.xlabel("totalprize given by customer")
-    plt.ylabel("totalquandity purchased by customers")
-    plt.title("distribution of total price and total quandity purchased");
     
-    #Also including the centrids in this plot.
-    plt.scatter(
+    ax.scatter(
         x=centroids[:, 0],
         y=centroids[:, 1],
         marker="*",
-        s=340
+        s=340,
+        color='red',  # You can customize the centroid color
+        label='Centroids'
     )
-    figure = plt.figure()
-    return figure
+    
+    ax.set_xlabel("Total Prize Given by Customer")
+    ax.set_ylabel("Total Quantity Purchased by Customers")
+    ax.set_title("Distribution of Total Price and Total Quantity Purchased")
+    ax.legend()
+
+    return fig
 
 figure = scatter_with_cluster(selected_type, slider)
 st.pyplot(figure)
