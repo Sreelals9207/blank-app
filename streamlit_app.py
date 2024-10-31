@@ -125,7 +125,7 @@ st.subheader(f"silhouette_score for the model : {ss}.")
 
 
 
-def scatter_with_cluster(selected_type = "Trimmed", slider=2)
+def scatter_with_cluster(selected_type = "Trimmed", slider=2):
     df = for_df(selected_type = selected_type)
     model = KMeans(n_clusters=slider, random_state=42)
     model.fit(df)
