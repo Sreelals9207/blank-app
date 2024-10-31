@@ -119,7 +119,7 @@ def k_models(selected_type = "Trimmed", slider):
     ss = silhouette_score(df, model.labels_)
     return inertia, ss
 
-inertia, ss = k_models(selected_type, slider)
+inertia, ss = k_models(selected_type, slider=slider)
 st.subheader(f"inertia for the model: {inertia}.")
 st.subheader(f"silhouette_score for the model: {ss}.") 
 
