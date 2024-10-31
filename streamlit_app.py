@@ -132,7 +132,8 @@ def scatter_with_cluster(selected_type = "Trimmed", slider=2):
     model.fit(df)
     labels = model.labels_
     centroids = model.cluster_centers_
-    figure = sns.scatterplot(
+    figure, ax = plt.figure(figsize=(10, 6)) 
+        sns.scatterplot(ax=ax,
         x=df["totalprize"],
         y=df["totalquandity"],
         hue=labels,
@@ -152,7 +153,7 @@ def scatter_with_cluster(selected_type = "Trimmed", slider=2):
     return figure
 
 figure = scatter_with_cluster(selected_type, slider)
-st.plotly_chart(figure)
+st.pyplot(figure)
 
 
 
