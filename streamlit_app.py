@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import plotly.express as px
 import joblib
-from sklearn.cluster import KMeans
+
 
 
 st.title("Clustering of Retail shop customers.")
@@ -109,56 +109,7 @@ def for_df(selected_type = "Trimmed"):
     return df1
 
 
-def model_with_centroid(selected_type = "Trimmed"):
-    if selected_type == "Trimmed":
-        df = for_df(selected_type = selected_type)
-        model = joblib.load("final_model1.pkl")
-        labels0 = model.labels_
-        centroids1 = model.cluster_centers_
-        fig = sns.scatterplot(
-            x=df["totalprize"],
-            y=df["totalquandity"],
-            hue=labels0,
-            palette="deep"
-        )
-        plt.xlabel("totalprize given by customer")
-        plt.ylabel("totalquandity purchased by customers")
-        plt.title("distribution of total price and total quandity purchased");
-        
-        #Also including the centrids in this plot.
-        plt.scatter(
-            x=centroids0[:, 0],
-            y=centroids0[:, 1],
-            marker="*",
-            s=340
-        )
-    else:
-        df = for_df(selected_type = selected_type)
-        model = joblib.load("final_model0.pkl")
-        labels0 = model.labels_
-        centroids1 = model.cluster_centers_
-        fig = sns.scatterplot(
-            x=df["totalprize"],
-            y=df["totalquandity"],
-            hue=labels0,
-            palette="deep"
-        )
-        plt.xlabel("totalprize given by customer")
-        plt.ylabel("totalquandity purchased by customers")
-        plt.title("distribution of total price and total quandity purchased");
-        
-        #Also including the centrids in this plot.
-        plt.scatter(
-            x=centroids0[:, 0],
-            y=centroids0[:, 1],
-            marker="*",
-            s=340
-        )
-        
-    return fig
 
-figr = model_with_centroid(selected_type)
-st.plotly_chart(figr)
 
     
 
