@@ -9,7 +9,15 @@ from sklearn.metrics import silhouette_score
 
 
 
-st.title("Clustering of Retail shop customers.")
+st.title("Clustering Model for Retail Customers")
+
+st.markdown("""
+### Interactive Clustering Model
+Explore the clustering model for retail customer data using **two features**. 
+
+- **Trimmed vs. Non-Trimmed Data:** 
+  - Use the switches below to toggle between trimmed and non-trimmed data.
+""")
 selected_type = st.radio("Choose data type:", ('Trimmed', 'Non-Trimmed'))
 
 def scatter_plot_df(selected_type = "Trimmed"):
