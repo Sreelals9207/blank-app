@@ -110,8 +110,8 @@ def for_df(selected_type = "Trimmed"):
         ]
     return df1
 
-slider = st.slider("number of clusters", 2, 15, 2)
-def k_models(selected_type = "Trimmed", slider):
+slider = st.slider("number of clusters for trimmed data", 2, 15, 2)
+def k_models(selected_type = "Trimmed", slider=2):
     df = for_df(selected_type = selected_type)
     model = KMeans(n_clusters=slider, random_state=42)
     model.fit(df)
@@ -119,14 +119,15 @@ def k_models(selected_type = "Trimmed", slider):
     ss = silhouette_score(df, model.labels_)
     return inertia, ss
 
-inertia, ss = k_models(selected_type, slider=slider)
+inertia, ss = k_models(selected_type, slider)
 st.subheader(f"inertia for the model: {inertia}.")
 st.subheader(f"silhouette_score for the model: {ss}.") 
 
 
-
-
-
+slider1 = st.slider("number of clusters for non-trimmed data", 2, 15, 2)
+inertia1, ss1 = k_models(selected_type, slider1)
+st.subheader(f"inertia for the model: {inertia1}.")
+st.subheader(f"silhouette_score for the model: {ss1}.")
 
 
 
