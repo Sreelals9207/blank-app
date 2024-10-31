@@ -120,8 +120,8 @@ def k_models(selected_type = "Trimmed", slider=2):
     return inertia, ss
 
 inertia, ss = k_models(selected_type, slider)
-st.subheader(f"inertia for the model: {inertia}.")
-st.subheader(f"silhouette_score for the model: {ss}.") 
+st.subheader(f"inertia for the model : {inertia}.")
+st.subheader(f"silhouette_score for the model : {ss}.") 
 
 
 
