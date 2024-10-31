@@ -124,7 +124,7 @@ st.subheader(f"inertia for the model : {inertia}.")
 st.subheader(f"silhouette_score for the model : {ss}.") 
 
 
-
+st.subheader("Clusters with Centroids")
 
 def scatter_with_cluster(selected_type="Trimmed", slider=2):
     df = for_df(selected_type=selected_type)  # Assuming for_df is defined elsewhere
