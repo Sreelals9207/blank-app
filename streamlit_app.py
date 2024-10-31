@@ -108,8 +108,13 @@ def for_df(selected_type = "Trimmed"):
         ]
     return df1
 
-
-
+slider = st.slider("number of clusters", min=2, max=15, value=2)
+def k_models(selected_type = "Trimmed", slider = slider):
+    df = for_df(selected_type = selected_type)
+    model = KMeans(n_clusters=slider, random_state=42)
+    model.fit(X1)
+    append(model.inertia_)
+    append(silhouette_score(X1, model.labels_))
 
     
 
