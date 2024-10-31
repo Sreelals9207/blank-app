@@ -75,6 +75,13 @@ def scatter_plot_df(selected_type = "Trimmed"):
 
 fig , shape = scatter_plot_df(selected_type)
 st.plotly_chart(fig)
+st.markdown("""
+### Dynamic Scatter Plot
+After the **Trimmed** and **Non-Trimmed** buttons, you will see a scatter plot that updates based on your data selection.
+""")
+
+
+
 st.header(
     f"shape of the dataframe is{shape}."
 )
