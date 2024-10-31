@@ -134,7 +134,7 @@ def scatter_with_cluster(
     labels = model.labels_
     centroids = model.cluster_centers_
     figure, ax = plt.figure(figsize=(10, 6)) 
-        sns.scatterplot(ax=ax,
+    sns.scatterplot(ax=ax,
         x=df["totalprize"],
         y=df["totalquandity"],
         hue=labels,
