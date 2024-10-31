@@ -111,7 +111,7 @@ def for_df(selected_type = "Trimmed"):
     return df1
 
 slider = st.slider("number of clusters", 2, 15, 2)
-def k_models(selected_type = "Trimmed", slider=2):
+def k_models(selected_type = "Trimmed", slider):
     df = for_df(selected_type = selected_type)
     model = KMeans(n_clusters=slider, random_state=42)
     model.fit(df)
