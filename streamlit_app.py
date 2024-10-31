@@ -86,6 +86,17 @@ st.header(
     f"shape of the dataframe is{shape}."
 )
 
+st.markdown("""
+### Adjustable Number of Clusters
+Next, you'll find a slider allowing you to select the **number of clusters** from **2 to 15**. 
+
+As you adjust the slider:
+- A model is trained using the selected cluster value.
+- The **Silhouette score** and **Inertia** for the current model are displayed below.
+
+Moving the slider will dynamically update the Silhouette score and Inertia. You can also use the **Trimmed** and **Non-Trimmed** buttons to modify the data being used.
+""")
+
 def for_df(selected_type = "Trimmed"):
     data = pd.read_csv("OnlineRetail.csv.zip", encoding='ISO-8859-1')
 
