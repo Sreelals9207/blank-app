@@ -199,7 +199,7 @@ def proportion_cg(selected_type = "Trimmed", slider = 2):
   return df
 
 plot = proportion_cg(selected_type, slider)
-
+st.subheader(f"shape{len(plot)}")
 
 
 
