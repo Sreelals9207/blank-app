@@ -201,7 +201,7 @@ def proportion_cg(selected_type = "Trimmed", slider = 2):
   xgb = df.groupby(model.labels_).mean()
   proportional_change = (xgb["totalprize"] / xgb["totalquandity"])
   fig = px.bar(
-      r, 
+      proportional_change, 
       y=proportional_change.values,
       x=proportional_change.index,
       title="Distribution of Total Price and Total Quantity Purchased"
