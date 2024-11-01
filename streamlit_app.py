@@ -83,7 +83,7 @@ The scatter plot that updates based on your data selection.
 st.plotly_chart(fig)
 
 
-st.header(
+st.subheader(
     f"shape of the dataframe is{shape}."
 )
 
