@@ -190,6 +190,10 @@ def scatter_with_cluster(selected_type="Trimmed", slider=2):
 figure = scatter_with_cluster(selected_type, slider)
 st.pyplot(figure)
 
+st.markdown("""
+### Scatter Plot
+This is the scatter plot with the selected number of clusters. The observations in our data are divided into various clusters.
+""")
 
 
 
