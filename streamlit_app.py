@@ -200,7 +200,7 @@ def proportion_cg(selected_type = "Trimmed", slider = 2):
   model.fit(df)
   xgb = df.groupby(model.labels_).mean()
   proportional_change = (xgb["totalprize"] / xgb["totalquandity"])
-  fig = px.bar(
+  figrr = px.bar(
       proportional_change, 
       y=proportional_change.values,
       x=proportional_change.index,
