@@ -204,16 +204,15 @@ def proportion_cg(selected_type = "Trimmed", slider = 2):
   model.fit(df)
   xgb = df.groupby(model.labels_).mean()
   proportional_change = (xgb["totalprize"] / xgb["totalquandity"])
-  figrr = px.bar(
-      proportional_change, 
-      y=proportional_change.values,
-      x=proportional_change.index,
-      title="Distribution of Total Price and Total Quantity Purchased"
-  )
-  return figrr
+  plt.figure(figsize=(10, 6))
+  plt.bar(xgb.index, proportionate_change, color='skyblue')
+  plt.xlabel("Clusters")
+  plt.ylabel("Proportionate Change (Total Price / Total Quantity)")
+  plt.title("Proportionate Change of Total Prize and Total Quantity")
+  plt.xticks(rotation=0)
+  return st.pyplot(plt)
 
 plot = proportion_cg(selected_type, slider)
-st.plotly_chart(plot)
 
 
 
