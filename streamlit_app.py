@@ -205,7 +205,7 @@ def proportion_cg(selected_type = "Trimmed", slider = 2):
   xgb = df.groupby(model.labels_).mean()
   proportional_change = (xgb["totalprize"] / xgb["totalquandity"])
   plt.figure(figsize=(10, 6))
-  plt.bar(xgb.index, proportionate_change, color='skyblue')
+  plt.bar(xgb.index, proportional_change, color='skyblue')
   plt.xlabel("Clusters")
   plt.ylabel("Proportionate Change (Total Price / Total Quantity)")
   plt.title("Proportionate Change of Total Prize and Total Quantity")
