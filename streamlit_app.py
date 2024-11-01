@@ -206,8 +206,8 @@ def proportion_cg(selected_type = "Trimmed", slider = 2):
   proportional_change = (xgb["totalprize"] / xgb["totalquandity"])
   figrr = px.bar(
       proportional_change, 
-      y=proportional_change.values,
-      x=proportional_change.index,
+      x=proportional_change.values,
+      y=proportional_change.index,
       title="Distribution of Total Price and Total Quantity Purchased"
   )
   return figrr
