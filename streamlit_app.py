@@ -197,7 +197,7 @@ st.pyplot(figure)
 st.markdown("""
 This is the scatter plot with the selected number of clusters. The observations in our data are divided into various clusters.
 """)
-
+st.subheader("Proportionate Change of Total Prize and Total Quantity")
 def proportion_cg(selected_type = "Trimmed", slider = 2):
   df = for_df(selected_type = selected_type)
   model = KMeans(n_clusters=slider, random_state=42)
