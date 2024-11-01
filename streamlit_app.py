@@ -196,10 +196,10 @@ This is the scatter plot with the selected number of clusters. The observations 
 
 def proportion_cg(selected_type = "Trimmed", slider = 2):
   df = for_df(selected_type = selected_type)
-  return df
+  return df.shape
 
 plot = proportion_cg(selected_type, slider)
-st.subheader(f"shape{len(plot)}")
+st.subheader(f"shape{plot}")
 
 
 
