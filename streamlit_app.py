@@ -196,10 +196,21 @@ This is the scatter plot with the selected number of clusters. The observations 
 
 def proportion_cg(selected_type = "Trimmed", slider = 2):
   df = for_df(selected_type = selected_type)
-  return df.shape
+  model = KMeans(n_clusters=slider, random_state=42)
+  model.fit(df)
+  xgb = df.groupby(model.labels_).mean()
+  proportional_change = (xgb["totalprize"] / xgb["totalquandity"])
+  fig = px.bar(
+      r, 
+      y=proportional_change.values,
+      x=proportional_change.index,
+      title="Distribution of Total Price and Total Quantity Purchased"
+  )
+  return figrr
 
 plot = proportion_cg(selected_type, slider)
-st.subheader(f"shape{plot}")
+st.plotly_chart(plot)
+
 
 
 
