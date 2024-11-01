@@ -78,10 +78,7 @@ st.plotly_chart(fig)
 st.markdown("""
 ### Dynamic Scatter Plot
 After the **Trimmed** and **Non-Trimmed** buttons, you will see a scatter plot that updates based on your data selection.
-""")
 
-
-st.markdown("""
 ### Dataframe Shape Preview
 You can view the shape of the DataFrame as you toggle between the **Trimmed** and **Non-Trimmed** buttons.
 """)
@@ -95,13 +92,12 @@ st.header(
 
 st.markdown("""
 ### Adjustable Number of Clusters
-Next, you'll find a slider allowing you to select the **number of clusters** from **2 to 15**. 
+Use the slider to select the **number of clusters** (2 to 15). 
 
-As you adjust the slider:
-- A model is trained using the selected cluster value.
-- The **Silhouette score** and **Inertia** for the current model are displayed below.
+- A model is trained based on your selection.
+- The **Silhouette score** and **Inertia** are displayed below.
 
-Moving the slider will dynamically update the Silhouette score and Inertia. You can also use the **Trimmed** and **Non-Trimmed** buttons to modify the data being used.
+Adjusting the slider dynamically updates these metrics. You can also modify the data using the **Trimmed** and **Non-Trimmed** buttons.
 """)
 
 def for_df(selected_type = "Trimmed"):
